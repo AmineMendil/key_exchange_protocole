@@ -23,12 +23,14 @@ L'objectif de ce projet est de mettre en œuvre un protocole d'échange d'une cl
   Les deux entités échangent leurs clés publiques KpubAKpubA​ et KpubBKpubB​ dès qu'un client se connecte au serveur.
 
   #### Étape 1 : Alice --- {A,Kpub(RA)} ---> Bob
+  
   Alice :
    + Chiffre son nonce RA avec la clé publique de Bob KpubB.
    + Concatène son identité avec le nonce chiffré A,KpubB(RA).
    + Envoie le résultat à Bob.
 
   #### Étape 2 : Alice <--- {KpubA(RB),h(RA)} --- Bob
+  
   Bob :
    + Reçoit le message d'Alice.
    + Extrait KpubB(RA).
@@ -39,6 +41,7 @@ L'objectif de ce projet est de mettre en œuvre un protocole d'échange d'une cl
    + Envoie ce message à Alice.
 
   #### Étape 3 : Alice --- {RB(RA(KAB))} ---> Bob
+  
   Alice :
    + Reçoit le message de Bob.
    + Extrait et déchiffre KpubA(RB) à l'aide de sa clé privée KprAKprA​ pour obtenir RB.
@@ -49,6 +52,7 @@ L'objectif de ce projet est de mettre en œuvre un protocole d'échange d'une cl
      Envoie le résultat à Bob.
 
   #### Étape 4 : Alice <--- {KprB(h(KAB))} --- Bob
+  
    Bob :
     + Reçoit le message d'Alice.
     + Déchiffre avec RB à l'aide de l'AES RA(KAB).
@@ -58,6 +62,7 @@ L'objectif de ce projet est de mettre en œuvre un protocole d'échange d'une cl
     + Envoie le résultat à Alice.
 
   #### Étape 5 : vérification de la clé secrète KAB
+  
    Alice :
     + Déchiffre le message reçu avec la clé publique de Bob KpubBKpubB​ pour obtenir h(KAB​).
     + Hache la clé KAB localement.
