@@ -54,6 +54,7 @@ L'objectif de ce projet est de mettre en œuvre un protocole d'échange d'une cl
   #### Étape 4 : Alice <--- {KprB(h(KAB))} --- Bob
   
    Bob :
+   
     + Reçoit le message d'Alice.
     + Déchiffre avec RB à l'aide de l'AES RA(KAB).
     + Déchiffre à nouveau avec RARA​ pour obtenir KABKAB​.
@@ -64,6 +65,7 @@ L'objectif de ce projet est de mettre en œuvre un protocole d'échange d'une cl
   #### Étape 5 : vérification de la clé secrète KAB
   
    Alice :
+   
     + Déchiffre le message reçu avec la clé publique de Bob KpubBKpubB​ pour obtenir h(KAB​).
     + Hache la clé KAB localement.
     + Compare le haché calculé avec celui reçu.
